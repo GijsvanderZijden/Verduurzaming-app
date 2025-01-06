@@ -96,9 +96,9 @@ def generate_pdf(data, totals):
     pdf.add_font('DejaVu', '', 'dejavu-sans-bold.ttf', uni=True)
     pdf.set_font("DejaVu", size=12)
     
-    # Add logo
-    logo_url = "https://i.ibb.co/37hBHp8/logo-Bb-DW.jpg"
-    pdf.image(logo_url, x=80, y=10, w=50)  # Centered on the page
+    # Add local logo
+    logo_path = "logo-Bb-DW.jpg"  # Update this path to your local image file
+    pdf.image(logo_path, x=80, y=10, w=50)  # Centered on the page
     pdf.ln(30)  # Add some space below the logo
 
     pdf.set_font("DejaVu", size=16)
