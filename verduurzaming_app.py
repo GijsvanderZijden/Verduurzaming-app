@@ -149,8 +149,8 @@ def generate_category_input(category_name, default_area, default_current_rc, def
     area = st.number_input(f"Oppervlakte {category_name.lower()} (m²):", min_value=1, max_value=1000, value=default_area)
     current_rc = st.number_input(f"Huidige RC-waarde {category_name.lower()}:", min_value=0.1, max_value=5.0, value=default_current_rc, step=0.1)
     desired_rc = st.number_input(f"Gewenste RC-waarde {category_name.lower()}:", min_value=0.1, max_value=5.0, value=default_desired_rc, step=0.1)
-    material_kost = st.number_input(f"Materiaal kosten {category_name.lower()}:", min_value=1.0, max_value=2000.0, value=20.0, step=1.0)
-    installatie_kost = st.number_input(f"Installatie kosten {category_name.lower()}:", min_value=1.0, max_value=2000.0, value=10.0, step=1.0)
+    material_kost = st.number_input(f"Materiaal kosten {category_name.lower()} (m²):", min_value=1.0, max_value=2000.0, value=20.0, step=1.0)
+    installatie_kost = st.number_input(f"Installatie kosten {category_name.lower()} (m²):", min_value=1.0, max_value=2000.0, value=10.0, step=1.0)
     return area, current_rc, desired_rc, material_kost, installatie_kost
 
 # Streamlit layout
@@ -160,7 +160,7 @@ subsidie_percentage = st.slider('Kies het percentage subsidie:', 0, 30, 20)
 delta_t = st.number_input("Temperatuurverschil (ΔT) tussen binnen en buiten (°C):", min_value=1, max_value=50, value=15)
 hours_per_year = 8760
 heating_type = st.selectbox("Kies het type verwarming:", ["Gas", "Elektriciteit gemiddeld", "Stadsverwarming","Zonne energie"])
-Energy_kost = st.number_input("Energie kosten", min_value=0.0, max_value=50.0, value=0.6)
+Energy_kost = st.number_input("Energie kosten (euro/kWh)", min_value=0.0, max_value=50.0, value=0.6)
 
 emissie = {
         "Gas": 0.184,
