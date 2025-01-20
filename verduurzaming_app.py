@@ -35,7 +35,7 @@ def calculate_u_value(rc_value):
     return 1 / rc_value
 
 # Functie om energieverlies te berekenen
-def calculate_energy_loss(u_value, area, delta_t, hours_per_year=8760):
+def calculate_energy_loss(u_value, area, delta_t, hours_per_year=4800):
     return (u_value * area * delta_t * hours_per_year) / 1000
 
 # Functie om kostenbesparing te berekenen
@@ -158,7 +158,7 @@ st.title("Verduurzamingscalculator voor BBDW")
 subsidie_percentage = st.slider('Kies het percentage subsidie:', 0, 30, 20)
 
 delta_t = st.number_input("Temperatuurverschil (ΔT) tussen binnen en buiten (°C):", min_value=1, max_value=50, value=15)
-hours_per_year = 8760
+hours_per_year = 4800
 heating_type = st.selectbox("Kies het type verwarming:", ["Gas", "Elektriciteit gemiddeld", "Stadsverwarming","Zonne energie"])
 Energy_kost = st.number_input("Energie kosten (euro/kWh)", min_value=0.0, max_value=50.0, value=0.6)
 
